@@ -1,0 +1,23 @@
+[
+	{
+		"key": "ui_options_page_65e236d93d1da",
+		"title": "Alert Bar",
+		"active": true,
+		"menu_order": 0,
+		"page_title": "Alert Bar",
+		"menu_slug": "alert-bar",
+		"parent_slug": "none",
+		"advanced_configuration": 1,
+		"icon_url": "dashicons-warning",
+		"menu_title": "Alert Bar",
+		"position": "",
+		"redirect": 0,
+		"description": "Powers a banner above the header to display alerts",
+		"update_button": "Update",
+		"updated_message": "Options Updated",
+		"capability": "edit_posts",
+		"data_storage": "options",
+		"post_id": "",
+		"autoload": 1
+	}
+]

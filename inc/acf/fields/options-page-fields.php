@@ -1,0 +1,238 @@
+<?php
+/**
+ * The Options Page Fields
+ *
+ * @package ChoctawNation
+ * @subpackage HeaderAlert
+ */
+
+add_action(
+	'acf/include_fields',
+	function () {
+		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+				return;
+		}
+
+		acf_add_local_field_group(
+			array(
+				'key'                   => 'group_65e2374425071',
+				'title'                 => 'Options - Alert Bar',
+				'fields'                => array(
+					array(
+						'key'               => 'field_65e5d7079bf41',
+						'label'             => 'Active',
+						'name'              => 'is_active',
+						'aria-label'        => '',
+						'type'              => 'true_false',
+						'instructions'      => '',
+						'required'          => 0,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'message'           => 'Turn On',
+						'default_value'     => 0,
+						'ui'                => 0,
+						'ui_on_text'        => '',
+						'ui_off_text'       => '',
+					),
+					array(
+						'key'               => 'field_65e23820b8ae2',
+						'label'             => 'Dismissable',
+						'name'              => 'dismissable',
+						'aria-label'        => '',
+						'type'              => 'true_false',
+						'instructions'      => '',
+						'required'          => 0,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'message'           => 'Check to allow users to dismiss the box',
+						'default_value'     => 0,
+						'ui'                => 0,
+						'ui_on_text'        => '',
+						'ui_off_text'       => '',
+					),
+					array(
+						'key'               => 'field_65e23744b8adc',
+						'label'             => 'Text Content',
+						'name'              => 'text_content',
+						'aria-label'        => '',
+						'type'              => 'wysiwyg',
+						'instructions'      => '',
+						'required'          => 0,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'default_value'     => '',
+						'tabs'              => 'all',
+						'toolbar'           => 'basic',
+						'media_upload'      => 0,
+						'delay'             => 0,
+					),
+					array(
+						'key'               => 'field_65e2377db8add',
+						'label'             => 'Call to Action Button',
+						'name'              => 'cta',
+						'aria-label'        => '',
+						'type'              => 'group',
+						'instructions'      => '',
+						'required'          => 0,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'layout'            => 'block',
+						'sub_fields'        => array(
+							array(
+								'key'               => 'field_65e23793b8ade',
+								'label'             => 'Button Text',
+								'name'              => 'button_text',
+								'aria-label'        => '',
+								'type'              => 'text',
+								'instructions'      => '',
+								'required'          => 0,
+								'conditional_logic' => 0,
+								'wrapper'           => array(
+									'width' => '',
+									'class' => '',
+									'id'    => '',
+								),
+								'default_value'     => '',
+								'maxlength'         => '',
+								'placeholder'       => '',
+								'prepend'           => '',
+								'append'            => '',
+							),
+							array(
+								'key'               => 'field_65e2379eb8adf',
+								'label'             => 'Button Link',
+								'name'              => 'button_link',
+								'aria-label'        => '',
+								'type'              => 'url',
+								'instructions'      => '',
+								'required'          => 0,
+								'conditional_logic' => 0,
+								'wrapper'           => array(
+									'width' => '',
+									'class' => '',
+									'id'    => '',
+								),
+								'default_value'     => '',
+								'placeholder'       => '',
+							),
+							array(
+								'key'               => 'field_65e237b0b8ae0',
+								'label'             => 'Custom Colors',
+								'name'              => 'allow_custom_colors',
+								'aria-label'        => '',
+								'type'              => 'true_false',
+								'instructions'      => '',
+								'required'          => 0,
+								'conditional_logic' => 0,
+								'wrapper'           => array(
+									'width' => '',
+									'class' => '',
+									'id'    => '',
+								),
+								'message'           => 'Check to use custom button colors',
+								'default_value'     => 0,
+								'ui'                => 0,
+								'ui_on_text'        => '',
+								'ui_off_text'       => '',
+							),
+							array(
+								'key'               => 'field_65e238b3eb382',
+								'label'             => 'Custom Colors',
+								'name'              => 'custom_colors',
+								'aria-label'        => '',
+								'type'              => 'group',
+								'instructions'      => '',
+								'required'          => 0,
+								'conditional_logic' => array(
+									array(
+										'field'    => 'field_65e237b0b8ae0',
+										'operator' => '==',
+										'value'    => '1',
+									),
+								),
+								'wrapper'           => array(
+									'width' => '',
+									'class' => '',
+									'id'    => '',
+								),
+								'layout'            => 'block',
+								'sub_fields'        => array(
+									array(
+										'key'            => 'field_65e237fcb8ae1',
+										'label'          => 'Button Color',
+										'name'           => 'button_color',
+										'aria-label'     => '',
+										'type'           => 'color_picker',
+										'instructions'   => '',
+										'required'       => 0,
+										'conditional_logic' => 0,
+										'wrapper'        => array(
+											'width' => '',
+											'class' => '',
+											'id'    => '',
+										),
+										'default_value'  => '',
+										'enable_opacity' => 0,
+										'return_format'  => 'array',
+									),
+									array(
+										'key'            => 'field_65e237bdb8ae0',
+										'label'          => 'Button Background',
+										'name'           => 'button_background',
+										'aria-label'     => '',
+										'type'           => 'color_picker',
+										'instructions'   => '',
+										'required'       => 0,
+										'conditional_logic' => 0,
+										'wrapper'        => array(
+											'width' => '',
+											'class' => '',
+											'id'    => '',
+										),
+										'default_value'  => '',
+										'enable_opacity' => 1,
+										'return_format'  => 'array',
+									),
+								),
+							),
+						),
+					),
+				),
+				'location'              => array(
+					array(
+						array(
+							'param'    => 'options_page',
+							'operator' => '==',
+							'value'    => 'alert-bar',
+						),
+					),
+				),
+				'menu_order'            => 0,
+				'position'              => 'acf_after_title',
+				'style'                 => 'default',
+				'label_placement'       => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen'        => '',
+				'active'                => true,
+				'description'           => 'Fields that power the Alert Bar Options Page',
+				'show_in_rest'          => 0,
+			),
+		);
+	},
+);
