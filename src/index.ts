@@ -1,29 +1,3 @@
-interface Window {
-	headerBarData: {
-		textContent: string;
-		isDismissable: 0 | 1;
-		cta: {
-			button_text: string;
-			button_link: string;
-			allow_custom_colors: boolean;
-			custom_colors: {
-				button_color: {
-					red: number;
-					green: number;
-					blue: number;
-					alpha: number;
-				};
-				button_background: {
-					red: number;
-					green: number;
-					blue: number;
-					alpha: number;
-				};
-			};
-		};
-	};
-}
-
 class HeaderBar {
 	private header: HTMLElement;
 	private isVisible: boolean;
@@ -32,6 +6,7 @@ class HeaderBar {
 	private lastScroll: number;
 	private body: HTMLElement;
 	private masthead: HTMLElement;
+	private transition = `0.25s ease-in-out`;
 
 	constructor() {
 		if ( document.cookie.includes( 'headerIsDismissed=true' ) ) {
@@ -115,23 +90,29 @@ class HeaderBar {
 	}
 
 	private addOffset() {
-		document.body.classList.remove( this.scrollDown );
-		document.body.classList.add( this.scrollUp );
+		this.body.classList.remove( this.scrollDown );
+		this.body.classList.add( this.scrollUp );
 
+		this.styleElement( this.body, {
+			paddingTop: `${
+				this.header.offsetHeight + this.masthead.offsetHeight
+			}px`,
+		} );
 		this.styleElement( this.masthead, {
+			transition: `transform ${ this.transition }`,
 			transform: `translateY(${ this.header.offsetHeight }px)`,
 		} );
 	}
 
 	private removeOffset() {
-		document.body.classList.remove( this.scrollUp );
-		document.body.classList.add( this.scrollDown );
+		this.body.classList.remove( this.scrollUp );
+		this.body.classList.add( this.scrollDown );
+
 		this.styleElement( this.body, {
-			transform: '',
-			paddingTop: ``,
-		} );
-		this.styleElement( this.masthead, {
 			paddingTop: '',
+		} );
+
+		this.styleElement( this.masthead, {
 			transform: '',
 		} );
 	}

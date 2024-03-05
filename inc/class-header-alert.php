@@ -119,7 +119,7 @@ class Header_Alert {
 	 * @return string
 	 */
 	private function alert_styles(): string {
-		return '<style>#cno-alert-header-bar {background-color: var(--bs-primary);transition: all .25s ease-in-out;z-index:1031!important;transform:translateY(0%)}.scroll-down #cno-alert-header-bar {transform: translateY(-100%);}#masthead {transition:all .25s ease-in-out;}</style>';
+		return '<style>#cno-alert-header-bar {background-color: var(--bs-primary);transition: transform .25s ease-in-out;z-index:1031!important;transform:translateY(0%)}.scroll-down #cno-alert-header-bar {transform: translateY(-100%);}#masthead {transition:transform .25s ease-in-out;}</style>';
 	}
 
 	/**
@@ -173,4 +173,3 @@ class Header_Alert {
 		return "style='{$button_style}{$button_background_style}'";
 	}
 }
-new Header_Alert();
