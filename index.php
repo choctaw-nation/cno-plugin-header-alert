@@ -3,7 +3,7 @@
  * Plugin Name: Choctaw Header Alert Plugin
  * Description: Choctaw Header Alert plugin allows users to add a banner to the top of a page and customize its colors and text via ACF fields.
  * Plugin URI: https://github.com/choctaw-nation/cno-plugin-header-alert
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Choctaw Nation of Oklahoma
  * Author URI: https://www.choctawnation.com
  * Text Domain: cno

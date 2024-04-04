@@ -15,7 +15,7 @@ class Plugin_Loader {
 	/** Constructor */
 	public function __construct() {
 		$this->require_files();
-		new Header_Alert();
+		add_action( 'init', array( $this, 'init_header_alert' ) );
 	}
 
 	/** Loads the ACF APIs */
@@ -31,5 +31,12 @@ class Plugin_Loader {
 		}
 
 		require_once $path . 'class-header-alert.php';
+	}
+
+	/**
+	 * Initializes the Header Alert
+	 */
+	public function init_header_alert() {
+		new Header_Alert();
 	}
 }

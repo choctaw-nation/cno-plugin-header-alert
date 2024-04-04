@@ -1,6 +1,6 @@
 {
 	"name": "choctaw-plugin-header-alert",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Choctaw Nation of Oklahoma Header Alert Plugin",
 	"prettier": "@wordpress/prettier-config",
 	"browserslist": [
@@ -16,6 +16,6 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^27.3.0"
+		"@wordpress/scripts": "^27.6.0"
 	}
 }
